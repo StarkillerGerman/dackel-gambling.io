@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>teccle-Slots 🎰</title>
+  <title>dackel-Slots 🎰</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -564,9 +564,9 @@
     <!-- Header -->
     <div class="header">
       <div class="logo-row">
-        <img src="teccle.png" alt="teccle" class="logo-img" />
+        <img src="dackel.png" alt="dackel" class="logo-img" />
         <span class="game-title">SLOTS</span>
-        <img src="teccle.png" alt="teccle" class="logo-img" style="transform:scaleX(-1)" />
+        <img src="dackel.png" alt="dackel" class="logo-img" style="transform:scaleX(-1)" />
       </div>
       <div class="game-subtitle">by SKG Productions • try your luck</div>
     </div>
@@ -641,9 +641,9 @@
         <div class="paytable-title">🏆 Gewinntabelle</div>
         <div class="paytable-grid">
           <div class="pay-row">
-            <img src="teccle.png" /><img src="teccle.png" /><img src="teccle.png" />
+            <img src="dackel.png" /><img src="dackel.png" /><img src="dackel.png" />
             <div class="pay-info">
-              <div class="pay-name">3× TECCLE</div>
+              <div class="pay-name">3× dackel</div>
               <div class="pay-amount">15× Einsatz</div>
             </div>
           </div>
@@ -676,15 +676,15 @@
             </div>
           </div>
           <div class="pay-row">
-            <img src="teccle.png" />
+            <img src="dackel.png" />
             <div class="pay-info">
-              <div class="pay-name">TECCLE (Joker)</div>
+              <div class="pay-name">dackel (Joker)</div>
               <div class="pay-amount">2× Einsatz</div>
             </div>
           </div>
         </div>
         <div style="font-size:0.7rem;color:rgba(255,255,255,0.3);text-align:center;margin-top:0.6rem;letter-spacing:1px;">
-          Teccle ersetzt beliebige Symbole für 3× Match
+          dackel ersetzt beliebige Symbole für 3× Match
         </div>
       </div>
     </div>
@@ -698,23 +698,23 @@
 'use strict';
 
 // ─── Game State ───────────────────────────────────────────────────────────────
-const SYMBOLS = ['kirsche.png','glocke.png','seven.png','bar.png','teccle.png'];
+const SYMBOLS = ['kirsche.png','glocke.png','seven.png','bar.png','dackel.png'];
 
 const PAYOUTS = {
-  'teccle.png':  15,
+  'dackel.png':  15,
   'seven.png':   10,
   'bar.png':      7,
   'glocke.png':   5,
   'kirsche.png':  3,
 };
 
-// Weighted symbol pool (teccle rarer)
+// Weighted symbol pool (dackel rarer)
 const SYMBOL_POOL = [
   'kirsche.png','kirsche.png','kirsche.png',
   'glocke.png','glocke.png','glocke.png',
   'seven.png','seven.png',
   'bar.png','bar.png',
-  'teccle.png',
+  'dackel.png',
 ];
 
 let state = {
@@ -855,7 +855,7 @@ function resolveResult(finals) {
     payline.classList.add('active');
 
     // Message
-    if (finals[0] === finals[1] && finals[1] === finals[2] && finals[0] === 'teccle.png') {
+    if (finals[0] === finals[1] && finals[1] === finals[2] && finals[0] === 'dackel.png') {
       winMessage.textContent = `🐾 JACKPOT! +${payout} COINS`;
       winMessage.className = 'win-message jackpot show';
       spawnConfetti(60);
@@ -882,7 +882,7 @@ function resolveResult(finals) {
 }
 
 function checkWin(result) {
-  const joker = 'teccle.png';
+  const joker = 'dackel.png';
 
   // Triple joker (jackpot – must check BEFORE wildcard loop)
   if (result.every(s => s === joker)) return PAYOUTS[joker];
